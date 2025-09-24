@@ -1,0 +1,7 @@
+# Ignore Maven target
+/backend/target/
+# Ignore Node modules
+/frontend/node_modules/
+# Ignore IDE settings
+/.idea/
+/.vscode/
