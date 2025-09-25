@@ -45,7 +45,7 @@ public class Clientes {
     private String ci;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "tipo", nullable = false)
     private TipoCliente tipoCliente;
 
     private String cargoRango;
