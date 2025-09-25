@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
-import java.util.List;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,24 +17,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/api/clientes")
 public class ClientesController {
 
-    private final ClientesRepository repo;
+    private final ClientesService service;
 
-    public ClientesController(ClientesRepository repo) {
-        this.repo = repo;
+    public ClientesController(ClientesService service) {
+        this.service = service;
     }
 
     @GetMapping
-    public List<Clientes> list(@RequestParam(required = false) TipoCliente tipo) {
-        return (tipo != null) ? repo.findByTipoCliente(tipo) : repo.findAll();
+    public Page<ClientesDTO> list(@RequestParam(required = false) TipoCliente tipo, Pageable pageable) {
+        return service.list(tipo, pageable);
     }
 
     @GetMapping("/{id}")
-    public Clientes get(@PathVariable Long id) {
-        return repo.findById(id).orElseThrow();
+    public ClientesDTO get(@PathVariable Long id) {
+        return service.get(id);
     }
 
     @PostMapping
-    public Clientes create(@Valid @RequestBody Clientes cliente) {
-        return repo.save(cliente);
+    public ClientesDTO create(@Valid @RequestBody ClientesCreateDTO in) {
+        return service.create(in);
     }
 }

@@ -45,6 +45,9 @@ public class Clientes {
     private String ci;
 
     @Enumerated(EnumType.STRING)
+    private Sexo sexo;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "tipo", nullable = false)
     private TipoCliente tipoCliente;
 
