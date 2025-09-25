@@ -45,6 +45,7 @@ public class Clientes {
     private String ci;
 
     @Enumerated(EnumType.STRING)
+    @Column(length = 1, nullable = false)
     private Sexo sexo;
 
     @Enumerated(EnumType.STRING)
