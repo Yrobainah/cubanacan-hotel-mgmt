@@ -1,9 +1,10 @@
 package dev.cubanacan.api.cliente;
 
-import java.util.List;
-
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Pageable;
 
 public interface ClientesRepository extends JpaRepository<Clientes, Long> {
-    List<Clientes> findByTipoCliente(TipoCliente tipo);
+
+    Page<Clientes> findByTipoCliente(TipoCliente tipo, Pageable pageable);
 }
