@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS pais (
+  id      SERIAL PRIMARY KEY,
+  nombre  TEXT NOT NULL UNIQUE,
+  iso2    CHAR(2) UNIQUE
+);
