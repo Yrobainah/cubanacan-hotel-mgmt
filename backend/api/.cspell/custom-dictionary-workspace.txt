@@ -1,6 +1,10 @@
 # Custom Dictionary Words
 apellidos
+capacidad
+categoria
+ciudad
 clientes
+direccion
 flywaydb
 projectlombok
 rango
