@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS clientes (
+    id BIGSERIAL PRIMARY KEY,
+    nombre TEXT NOT NULL,
+    apellidos TEXT NOT NULL,
+    ci TEXT UNIQUE NOT NULL,
+    sexo CHAR(1) CHECK (sexo IN ('M', 'F')),
+    tipo CHAR(1) CHECK (tipo IN ('TRADICIONAL', 'VIP')) NOT NULL,
+    cargo_rango TEXT,
+    pais_id_origen BIGINT REFERENCES pais(id
+);
+
+ALTER TABLE  clientes
+    ADD CONSTRAINT cliente_vip_cargo_chk CHECK (tipo <> 'VIP' OR cargo_rango IS NOT NULL);
+
+    CREATE INDEX IF NOT EXISTS idx_clientes_ci ON clientes(tipo);

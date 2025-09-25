@@ -1,4 +1,10 @@
 # Custom Dictionary Words
+apellidos
+clientes
 flywaydb
 projectlombok
+rango
+sexo
 springframework
+tipo
+TRADICIONAL
