@@ -38,7 +38,7 @@ public class Clientes {
 
     @NotBlank
     @Column(nullable = false)
-    private String apellido;
+    private String apellidos;
 
     @NotBlank
     @Column(nullable = false, unique = true)
