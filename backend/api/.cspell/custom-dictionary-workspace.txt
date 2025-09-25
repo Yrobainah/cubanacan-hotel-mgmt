@@ -1,4 +1,6 @@
 # Custom Dictionary Words
 flywaydb
 projectlombok
+springdoc
 springframework
+webmvc
