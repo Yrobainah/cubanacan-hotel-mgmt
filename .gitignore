@@ -1,7 +1,16 @@
-# Ignore Maven target
-/backend/target/
-# Ignore Node modules
+# Build outputs
+**/target/
+/frontend/dist/
 /frontend/node_modules/
-# Ignore IDE settings
-/.idea/
-/.vscode/
+
+# Local environment and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# IDE and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
