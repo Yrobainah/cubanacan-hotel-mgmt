@@ -19,8 +19,17 @@ cd backend/api
 
 ## Perfiles
 
-- `dev`: PostgreSQL local; permite sobrescribir `DB_URL`, `DB_USER` y `DB_PASS`.
+- `dev`: PostgreSQL local; permite sobrescribir `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD`.
 - `test`: H2 en memoria y Flyway desactivado para pruebas reproducibles.
-- `prod`: exige `DB_URL`, `DB_USER` y `DB_PASS`; mantiene Flyway y validación JPA.
+- `prod`: exige `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD`; mantiene Flyway y validación JPA.
 
 La estructura base separa controladores, servicios, dominio, repositorios y configuración. El dominio hotelero todavía no está implementado.
+
+## Docker
+
+```bash
+docker compose up --build
+docker compose down
+docker compose logs -f backend
+docker compose logs -f postgres
+```
