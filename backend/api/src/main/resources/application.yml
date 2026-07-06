@@ -1,6 +1,10 @@
 spring:
   application:
     name: cubanacan-api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/hotelflow}
+    username: ${SPRING_DATASOURCE_USERNAME:app}
+    password: ${SPRING_DATASOURCE_PASSWORD:change-me}
   jpa:
     open-in-view: false
     properties:
